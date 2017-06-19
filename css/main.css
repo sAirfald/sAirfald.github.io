@@ -1,0 +1,350 @@
+/*public */
+
+
+/*end public */
+
+html,
+body {
+    height: 100%;
+}
+
+.home-bg {
+    background: url('https://www.dujin.org/sys/bing/1366.php') no-repeat;
+    background-size: cover;
+}
+
+.content {
+    position: absolute;
+    width: 100%;
+    top: 30%;
+    text-align: center;
+    color: #fff;
+}
+
+.content .time {
+    font-size: 120px;
+}
+
+.content h2 {
+    margin-bottom: 10px;
+    font-size: 50px;
+}
+
+.content a {
+    font-size: 20px;
+    color: #fff;
+    text-decoration: none;
+}
+
+.content a span {
+    vertical-align: middle;
+}
+
+
+/*end content    */
+
+.cover {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+}
+
+
+/*end cover*/
+
+
+/*side-bar */
+
+.side-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    font-size: 16px;
+    width: 250px;
+    height: 100%;
+    color: #999;
+    background-color: #202020;
+    overflow-x: hidden;
+    overflow-y: auto;
+    z-index: 1000;
+}
+
+.side-bar .profile {
+    padding-top: 40px;
+    padding-bottom: 10px;
+    text-align: center;
+}
+
+.side-bar .profile img {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    transition: transform 3s;
+}
+
+.side-bar .profile img:hover {
+    transform: rotate(360deg);
+}
+
+.side-bar .profile h2 {
+    padding: 10px 0;
+    font-weight: normal;
+    font-size: 20px;
+}
+
+.side-content .menus .menu {
+    line-height: 50px;
+}
+
+.side-content a {
+    color: #999;
+}
+
+.side-content .menus .menu a {
+    display: block;
+    padding-left: 45px;
+    transition: color .3s cubic-bezier(.4, .01, .165, .99);
+}
+
+.side-bar a:hover {
+    color: #fff;
+}
+
+.side-content .menus .menu a i {
+    padding-right: 20px;
+}
+
+
+/*end sid-bar*/
+
+
+/*main start*/
+
+
+/*about*/
+
+.about-main {
+    position: relative;
+    height: 100%;
+    margin-left: 250px;
+    background: url('../images/about-bg.jpg');
+    background-size: cover;
+}
+
+.description-box {
+    position: absolute;
+    width: 600px;
+    height: 500px;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    text-align: center;
+    border-radius: 6px;
+    background-color: #F1F5EC;
+}
+
+.description-box img {
+    width: 100%;
+    height: 300px;
+}
+
+.description-box p {
+    line-height: 30px;
+    font-size: 16px;
+}
+
+.description-box span {
+    display: block;
+    font-size: 14px;
+    margin-top: 25px;
+    margin-bottom: 10px;
+}
+
+.description-box .links a {
+    font-size: 16px;
+}
+
+.description-box .links i {
+    padding-right: 5px;
+}
+
+.description-box .links .modal-body img {
+    width: 300px;
+    height: 300px;
+}
+
+
+/*end about*/
+
+
+/*news*/
+
+.side-list {
+    left: 0;
+    height: 100%;
+    padding: 0;
+}
+
+.side-list .news-goBack,
+.side-list .movies-goBack {
+    margin-bottom: 20px;
+}
+
+.side-list .table td {
+    padding: 10px;
+    border-top: 0;
+    font-size: 16px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.news-content {
+    padding: 0;
+}
+
+.thumbnail-wrap:first-child {
+    display: none;
+}
+
+.news-content .thumbnail {
+    height: 365px;
+}
+
+.news-content .thumbnail a img {
+    font-size: 20px;
+    width: 100%;
+    height: 68%;
+}
+
+.news-content .thumbnail a img:hover {
+    opacity: 0.7;
+}
+
+.news-content .thumbnail a .news-text {
+    height: 32%;
+}
+
+.news-content .thumbnail .title {
+    padding-bottom: 10px;
+    font-size: 20px;
+}
+
+.news-content .thumbnail p {
+    font-size: 15px;
+}
+
+.news-content .thumbnail p a {
+    color: green;
+    font-size: 14px;
+}
+
+.news-content .thumbnail p .news-time {
+    margin-left: 10px;
+}
+
+.news-content .thumbnail .news-text {
+    margin: 0;
+}
+
+
+/*end news*/
+
+
+/*movies*/
+
+.movies-content {
+    padding: 0;
+}
+
+.movies-thumbnail-wrap .movies-thumbnail {
+    position: relative;
+    padding: 0;
+    color: #fff;
+    overflow: hidden;
+}
+
+.movies-thumbnail-wrap a img {
+    height: 400px;
+}
+
+.movies-thumbnail-wrap .des-top {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 40px;
+    background-color: rgba(0, 0, 0, .4);
+}
+
+.movies-thumbnail-wrap .des-top p {
+    line-height: 40px;
+    font-size: 20px;
+}
+
+.movies-thumbnail-wrap .des-bottom {
+    position: absolute;
+    left: 0;
+    top: 310px;
+    width: 100%;
+    padding: 10px;
+    color: hsla(0, 0%, 100%, .8);
+    background-color: rgba(0, 0, 0, .6);
+    transition: all .5s;
+}
+
+.movies-thumbnail-wrap .des-bottom p {
+    font-size: 14px;
+    line-height: 20px;
+}
+
+
+/*end movies*/
+
+
+/*pictures*/
+
+.picture-contents {
+    /*padding: ;*/
+}
+
+.picture-contents .picture-list li {
+    float: left;
+    width: 398px;
+    margin-right: 5px;
+}
+
+.picture-contents .picture-list li:nth-child(3n) {
+    margin-right: 0;
+}
+/*bootstrap只设置宽度，高度也改变了*/
+
+.picture-contents .picture-list img {
+    width: 100%;
+    margin-bottom: 5px;
+    transition: all 2s;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*end picture*/
+
+
+/*end*/

@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>movies | Airfald</title>
+    <meta name="author" content="阿福">
+    <meta name="robots" content="all">
+    <meta name="keywords" content="Airfald,阿福,前端,HTML,CSS,Javascript,js,jquery,bootstrap,框架,ajax">
+    <meta name="description" content="阿福的前端学习博客,Airfald,制作此博客用做玩耍">
+    <!--favicon-->
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <!--bootstrap css-->
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <!--font-->
+    <link rel="stylesheet" href="./css/font-awesome.min.css">
+    <!--theme css-->
+    <link rel="stylesheet" href="./css/theme.css">
+    <!--main.css-->
+    <link rel="stylesheet" href="./css/main.css">
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-1 side-list movies-list affix">
+                <a class="btn btn-block btn-primary goBack movies-goBack" href="./about.html">返回</a>
+                <table class="table movies-table table-hover">
+                    <tbody>
+                        <tr>
+                            <td class="active">正在热映</td>
+                        </tr>
+                        <tr>
+                            <td>即将上映</td>
+                        </tr>
+                        <tr>
+                            <td>豆瓣top250</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+
+
+
+            <div class="col-lg-11 pull-right movies-content">
+                <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 thumbnail-wrap movies-thumbnail-wrap">
+                    <div class="thumbnail movies-thumbnail">
+                        <a class="link" href="https://movie.douban.com/subject/1292052/">
+                            <img src="https://img3.doubanio.com/view/movie_poster_cover/lpst/public/p480747492.jpg" alt="哎哟！图片领盒饭去了...">
+                        </a>
+                        <div class="des-top">
+                            <p class="text-center title">肖申克的救赎</p>
+                        </div>
+                        <div class="des-bottom">
+                            <p>当前排名: 1</p>
+                            <p>评分: 9.6</p>
+                            <p>导演: <span data-id="1047973"> 弗兰克·德拉邦特 </span></p>
+                            <p>主演: <span data-id="1054521"> 蒂姆·罗宾斯<span>,</span></span><span data-id="1054534"> 摩根·弗里曼<span>,</span></span>
+                                <span data-id="1041179"> 鲍勃·冈顿<span>,</span></span>
+                            </p>
+                            <p>原名: The Shawshank Redemption</p>
+                            <p>看过人数: 1074194</p>
+                            <p>类型: <span>犯罪, </span><span>剧情, </span></p>
+                            <p>年代: 1994</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-12 load-more movies-load-more text-center">
+                    <a class="btn btn-primary">加载更多...</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--jquery-->
+    <script src="./js/jquery-3.2.1.min.js"></script>
+    <!--bootstrap-->
+    <script src="./js/bootstrap.min.js"></script>
+    <!--main-->
+    <script src="./js/main.js"></script>
+    <script>
+        $(function () {
+            var cnt = 0;
+            var start = 0;
+            var total = 0;
+            handleEvent();
+            $('.movies-table td:eq(0)').trigger('click');
+            //主动触发事件要放在加了事件处理的函数后面
+            handleDes();
+
+            function handleDes() {
+                $('.movies-thumbnail-wrap').on('mouseover', function () {
+                    var top = $(this).find('img').outerHeight() - $(this).find('.des-bottom').outerHeight();
+                    $(this).find('.des-bottom').css('top', top + 'px');
+                });
+
+                $('.movies-thumbnail-wrap').on('mouseout', function () {
+                    var top = $(this).find('img').outerHeight() - $(this).find('.des-bottom').outerHeight();
+                    $(this).find('.des-bottom').css('top', '310px');
+                });
+            }
+
+            function handleEvent() {
+                $('.table td').on('click', function () {
+                    $('.table td').removeClass('active');
+                    $(this).addClass('active');
+                });
+
+                $('.movies-table td:eq(0)').on('click', function () {
+                    cnt = 0;
+                    start = 0;
+                    cleanData();
+                    moviesLoadMore('/v2/movie/in_theaters', start, 20);
+                    handClick('/v2/movie/in_theaters', 10, 10);
+                });
+
+                $('.movies-table td:eq(1)').on('click', function () {
+                    cnt = 0;
+                    start = 0;
+                    cleanData();
+                    moviesLoadMore('/v2/movie/coming_soon', start, 20);
+                    handClick('/v2/movie/coming_soon', 10, 10);
+                });
+
+                $('.movies-table td:eq(2)').on('click', function () {
+                    cnt = 0;
+                    start = 0;
+                    cleanData();
+                    moviesLoadMore('/v2/movie/top250', start, 20);
+                    handClick('/v2/movie/top250', 10, 10);
+                });
+            }
+
+            function cleanData() {
+                var oMoviesContent = $('.movies-content').children();
+                oMoviesContent.each(function (index, element) {
+                    if (index != 0 && index != oMoviesContent.length - 1) {
+                        $(this).remove();
+                    }
+                });
+            }
+
+            function handClick(type, start, count) {
+                //此处先把上一次的移除否则会叠加
+                $('.movies-load-more').off('click');
+                $('.movies-load-more').on('click', function () {
+                    if (start + count <= total) {
+                        start = start + count;
+                        moviesLoadMore(type, start, count);
+                    } else {
+                        $('.movies-load-more a').text('抱歉，没有更多内容了');
+                    }
+                });
+            }
+
+            function ajaxSuccess(data) {
+                // console.log(data);
+                total = data['total'];
+                $.each(data['subjects'], function (index, element) {
+                    cnt++;
+                    var obj = $(this)[0];
+                    var oMoviesThumbnailWrap = $('.movies-thumbnail-wrap:eq(0)').clone(
+                        true);
+                    var oLink = oMoviesThumbnailWrap.find('.link');
+                    var oImg = oMoviesThumbnailWrap.find('img');
+                    var oTitle = oMoviesThumbnailWrap.find('.des-top .title');
+                    var oDesBottom = oMoviesThumbnailWrap.find('.des-bottom');
+                    var casts = '主演：';
+                    var genres = '类型：';
+                    var directors = '导演：';
+
+                    for (var i = 0; i < obj['casts'].length; i++) {
+                        casts += obj['casts'][i]['name'] + '&nbsp; &nbsp;';
+                    }
+                    for (var i = 0; i < obj['genres'].length; i++) {
+                        genres += obj['genres'][i] + '&nbsp; &nbsp;';
+                    }
+                    for (var i = 0; i < obj['directors'].length; i++) {
+                        directors += obj['directors'][i]['name'] + '&nbsp; &nbsp;';
+                    }
+
+                    oLink.attr('href', obj['alt']);
+                    oImg.attr('src', obj['images']['large']);
+                    oTitle.text(obj['title']);
+                    oDesBottom.html('<p>当前排名：' + cnt + '</p>' +
+                        '<p>评分：' + obj['rating']['average'] + '</p>' +
+                        '<p>' + directors + '</p>' +
+                        '<p>' + casts + '</p>' +
+                        '<p>原名: ' + obj['original_title'] + '</p>' +
+                        '<p>' + genres + '</p>' +
+                        '<p>年代：' + obj['year'] + '</p>');
+
+                    $('.movies-load-more').before(oMoviesThumbnailWrap);
+                    $('.movies-load-more a').html('加载更多...');
+                });
+            }
+
+            function moviesLoadMore(url, start, count) {
+                $('.movies-load-more a').html('<i class="fa fa-spinner fa-pulse"></i>加载中...');
+                $.ajax({
+                    type: 'get',
+                    url: 'https://api.douban.com' + url + '?start=' + start + '&count=' + count,
+                    async: false,
+                    dataType: 'jsonp',
+                    jsonp: 'callback',
+                    //传递给请求处理程序或页面的，用以获得jsonp回调函数名的参数名(默认为:callback)
+                    jsonpCallback: 'success_jsonpCallback',
+                    //自定义的jsonp回调函数名称，默认为jQuery自动生成的随机函数名
+                    success: ajaxSuccess
+                });
+            }
+        });
+    </script>
+
+</body>
+
+</html>

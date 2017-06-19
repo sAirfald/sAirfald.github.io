@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>news | Airfald</title>
+    <meta name="author" content="阿福">
+    <meta name="robots" content="all">
+    <meta name="keywords" content="Airfald,阿福,前端,HTML,CSS,Javascript,js,jquery,bootstrap,框架,ajax">
+    <meta name="description" content="阿福的前端学习博客,Airfald,制作此博客用做玩耍">
+    <!--favicon-->
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <!--bootstrap css-->
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <!--font-->
+    <link rel="stylesheet" href="./css/font-awesome.min.css">
+    <!--theme css-->
+    <link rel="stylesheet" href="./css/theme.css">
+    <!--main.css-->
+    <link rel="stylesheet" href="./css/main.css">
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-1 side-list news-list affix">
+                <a class="btn btn-block btn-primary goBack news-goBack" href="./about.html">返回</a>
+                <table class="table table-hover news-table">
+                    <tbody>
+                        <tr>
+                            <td class="active">体育新闻</td>
+                        </tr>
+                        <tr>
+                            <td>教育新闻</td>
+                        </tr>
+                        <tr>
+                            <td>科技新闻</td>
+                        </tr>
+                        <tr>
+                            <td>娱乐新闻</td>
+                        </tr>
+                        <tr>
+                            <td>女人新闻</td>
+                        </tr>
+                        <tr>
+                            <td>旅游新闻</td>
+                        </tr>
+                        <tr>
+                            <td>财经新闻</td>
+                        </tr>
+                        <tr>
+                            <td>股票新闻</td>
+                        </tr>
+                        <tr>
+                            <td>军事新闻</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
+            <div class="col-lg-11 pull-right news-content">
+                <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 thumbnail-wrap">
+                    <div class="thumbnail">
+                        <a class="link" href="http://war.163.com/17/0618/11/CN78UNGQ000181KT.html">
+                            <img src="http://cms-bucket.nosdn.127.net/catchpic/d/d9/d9fad1ce5be1fb43301a9a63d4060430.jpg" alt="哎哟！图片领盒饭去了...">
+                            <div class="alert alert-success news-text">
+                                <h3 class="title">俄军宣布成功测试反导系统：对目标进行打击...</h3>
+                                <p><a href="http://www.163.com/">网易</a> <span class="news-time">2017-06-18 11:39:59</span></p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-12 load-more news-load-more text-center">
+                    <a class="btn btn-primary">加载更多...</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--jquery-->
+    <script src="./js/jquery-3.2.1.min.js"></script>
+    <!--bootstrap-->
+    <script src="./js/bootstrap.min.js"></script>
+    <!--main-->
+    <script src="./js/main.js"></script>
+    <script>
+        $(function () {
+            var page = 1;
+            loadMore('sport', 1, 15);
+            handClick('sport');
+
+            $('.table td').on('click', function () {
+                $('.table td').removeClass('active');
+                $(this).addClass('active');
+            });
+
+            $('.news-table td:eq(0)').on('click', {
+                type: "sport"
+            }, function (event) {
+                page = 1;
+                cleanData();
+                loadMore(event.data.type, page, 15);
+                handClick(event.data.type);
+            });
+
+            $('.news-table td:eq(1)').on('click', {
+                type: "edu"
+            }, function (event) {
+                page = 2;
+                cleanData();
+                loadMore(event.data.type, page, 15);
+                handClick(event.data.type);
+            });
+
+            $('.news-table td:eq(2)').on('click', {
+                type: "tech"
+            }, function (event) {
+                page = 1;
+                cleanData();
+                loadMore(event.data.type, page, 15);
+                handClick(event.data.type);
+            });
+
+            $('.news-table td:eq(3)').on('click', {
+                type: "ent"
+            }, function (event) {
+                page = 1;
+                cleanData();
+                loadMore(event.data.type, page, 15);
+                handClick(event.data.type);
+            });
+            $('.news-table td:eq(4)').on('click', {
+                type: "lady"
+            }, function (event) {
+                page = 1;
+                cleanData();
+                loadMore(event.data.type, page, 15);
+                handClick(event.data.type);
+            });
+            $('.news-table td:eq(5)').on('click', {
+                type: "travel"
+            }, function (event) {
+                page = 2;
+                cleanData();
+                loadMore(event.data.type, page, 15);
+                handClick(event.data.type);
+            });
+            $('.news-table td:eq(6)').on('click', {
+                type: "money"
+            }, function (event) {
+                page = 1;
+                cleanData();
+                loadMore(event.data.type, page, 15);
+                handClick(event.data.type);
+            });
+            $('.news-table td:eq(7)').on('click', {
+                type: "gupiao"
+            }, function (event) {
+                page = 1;
+                cleanData();
+                loadMore(event.data.type, page, 15);
+                handClick(event.data.type);
+            });
+            $('.news-table td:eq(8)').on('click', {
+                type: "war"
+            }, function (event) {
+                page = 1;
+                cleanData();
+                loadMore(event.data.type, page, 15);
+                handClick(event.data.type);
+            });
+
+
+
+
+
+
+
+            function handClick(type) {
+                //此处先把上一次的移除否则会叠加
+                $('.news-load-more').off('click');
+                $('.news-load-more').on('click', function () {
+                    console.log('type == ' + type);
+                    if (page <= 15) {
+                        page++;
+                        loadMore(type, page, 20);
+                    } else {
+                        $('.news-load-more a').text('抱歉，没有更多内容了');
+                    }
+                });
+            }
+
+
+            function cleanData() {
+                var oNewsContent = $('.news-content').children();
+                oNewsContent.each(function (index, element) {
+                    if (index != 0 && index != oNewsContent.length - 1) {
+                        $(this).remove();
+                    }
+                });
+            }
+
+            function loadMore(type, page, limit) {
+                $.ajax({
+                    type: 'get',
+                    url: 'http://wangyi.butterfly.mopaasapp.com/news/api?type=' + type + '&page=' +
+                        page + '&limit=' + limit,
+                    success: function (data) {
+                        // console.log(data);
+                        $.each(data['list'], function (index, element) {
+                            var newThubmail = $('.thumbnail-wrap:eq(0)').clone(true);
+                            var obj = $(this);
+                            newThubmail.find('.link').attr('href', obj[0]['docurl']);
+                            newThubmail.find('img').attr('src', obj[0]['imgurl']);
+                            newThubmail.find('h3').text(obj[0]['title'] + '...');
+                            newThubmail.find('.news-time').text(obj[0]['time']);
+                            $('.load-more').before(newThubmail);
+                        });
+                    }
+                });
+            }
+        });
+    </script>
+
+
+</body>
+
+</html>

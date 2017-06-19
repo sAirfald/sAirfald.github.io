@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>music | Airfald</title>
+    <meta name="author" content="阿福">
+    <meta name="robots" content="all">
+    <meta name="keywords" content="Airfald,阿福,前端,HTML,CSS,Javascript,js,jquery,bootstrap,框架,ajax">
+    <meta name="description" content="阿福的前端学习博客,Airfald,制作此博客用做玩耍">
+    <!--favicon-->
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <!--music-->
+    <link rel="stylesheet" href="./css/music.css">
+    <!--bootstrap css-->
+    <!--<link rel="stylesheet" href="./css/bootstrap.min.css">-->
+    <!--font-->
+    <link rel="stylesheet" href="./css/font-awesome.min.css">
+    <!--theme css-->
+    <!--<link rel="stylesheet" href="./css/theme.css">-->
+</head>
+
+<body>
+    <div class="container clearfix">
+        <div class="play-list">
+            <div class="list-item">
+            </div>
+            <div class="scroll">
+                <a class="drag"></a>
+                <!--<a class="scroll-top"><img src="./img/down.jpg" alt="top"></a>-->
+                <!--<a class="scroll-bottom"><img src="./img/down.jpg" alt="down"></a>-->
+            </div>
+        </div>
+        <div class="controls">
+            <div class="music-title">勿忘心安</div>
+            <div class="music-artist">张杰</div>
+            <div class="current-time">
+                <span class="time">-2:29</span>
+                <span class="volume"></span>
+                <span class="volume-scroll"><span class="volume-value"></span></span>
+                <span class="lyric">词</span>
+            </div>
+            <div class="music-progress">
+                <div class="progress-value"></div>
+            </div>
+            <div class="like"></div>
+            <div class="music-button">
+                <a class="prev"></a>
+                <a class="toggle"></a>
+                <a class="next"></a>
+            </div>
+        </div>
+        <div class="pic"><img src="./images/img/pic.jpg" alt="图片" title="查看专辑信息"></div>
+    </div>
+    <p class="ps alert-info">ps:目前歌词滚动条暂时只支持chrome以及相同内核的浏览器</p>
+
+    <div class="bg"></div>
+    <audio autoplay>
+        <source src="http://mr1.doubanio.com/d087a35554d58d9dc04485c9b92d423f/0/fm/song/p749701_128k.mp3">
+    </audio>
+    <a href="./about.html" class="music-goBack"><i></i><span>返回</span></a>
+
+
+    <!--jquery-->
+    <script src="./js/jquery-3.2.1.min.js"></script>
+    <!--bootstrap-->
+    <script src="./js/bootstrap.min.js"></script>
+    <!--main-->
+    <!--music-->
+    <script src="./js/playlist.js"></script>
+    <script src="./js/music-main.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Airfald</title>
+    <meta name="author" content="阿福">
+    <meta name="robots" content="all">
+    <meta name="keywords" content="Airfald,阿福,前端,HTML,CSS,Javascript,js,jquery,bootstrap,框架,ajax">
+    <meta name="description" content="阿福的前端学习博客,Airfald,制作此博客用做玩耍">
+    <!--favicon-->
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <!--bootstrap css-->
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <!--font-->
+    <link rel="stylesheet" href="./css/font-awesome.min.css">
+    <!--theme css-->
+    <link rel="stylesheet" href="./css/theme.css">
+    <!--main.css-->
+    <link rel="stylesheet" href="./css/main.css">
+
+</head>
+
+<body>
+    <!--left-side-->
+    <section>
+        <nav class="side-bar">
+            <div class="side-content">
+                <div class="profile">
+                    <img src="./images/head-portrait.jpg" alt="个人头像">
+                    <h2><a href="https://airfald.github.io/">Airfald</a></h2>
+                    <p>究竟涅槃，内心空明</p>
+                </div>
+                <ul class="menus">
+                    <li class="menu"><a href="./music.html"><i class="fa fa-music"></i>听听音乐</a></li>
+                    <li class="menu"><a href="./news.html"><i class="fa fa-newspaper-o"></i>看看新闻</a></li>
+                    <li class="menu"><a href="./movies.html"><i class="fa fa-film"></i>电影排行</a></li>
+                    <li class="menu"><a href="./picture.html"><i class="fa fa-image"></i>风景</a></li>
+                    <li class="menu"><a href="./wheel.html"><i class="fa fa-wheelchair-alt"></i>造轮子</a></li>
+                    <li class="menu"><a href="./friends.html"><i class="fa fa-user-circle"></i>朋友们</a></li>
+                    <li class="menu"><a href="./about.html"><i class="fa fa-mortar-board"></i>关于我</a></li>
+                </ul>
+            </div>
+        </nav>
+    </section>
+    <!--left-side end-->
+
+    <div class="about-main">
+        <div class="description-box">
+            <img src="./images/des-person.jpg" alt="人物图片">
+            <div class="box-content alert alert-success">
+                <p>
+                    就读于一个渣渣本科,自我定位为前端菜菜一枚<br> 平时热爱生活和肉体<br>不世俗,喜欢钱
+                </p>
+                <span>如果你对我感兴趣！还可以通过下面几种方式了解我！</span>
+                <div class="links">
+                    <a href="https://github.com/airfaldhttp://airfald.github.io/" class="btn btn-primary"> <i class="fa fa-github"></i>github</a>
+                    <a href="http://airfald.github.io/" class="btn btn-info"> <i class="fa fa-pencil-square-o"></i>技术博客</a>
+                    <!--<a class="btn btn-success"> <i class="fa fa-wechat"></i>微信</a>-->
+                    <a class="btn btn-success" data-toggle="modal" data-target="#myModal">
+                        <i class="fa fa-wechat"></i>微信
+                    </a>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                    <h4 class="modal-title" id="myModalLabel">扫一扫</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <img src="./images/weChat.jpg" alt="微信">
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                    <!--<button type="button" class="btn btn-primary">Save changes</button>-->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--end modal-->
+                </div>
+                <!--end links-->
+            </div>
+            <!--end box-content-->
+        </div>
+        <!--box-->
+    </div>
+
+    <!--jquery-->
+    <script src="./js/jquery-3.2.1.min.js"></script>
+    <!--bootstrap-->
+    <script src="./js/bootstrap.min.js"></script>
+    <!--main-->
+    <script src="./js/main.js"></script>
+
+</body>
+
+</html>
