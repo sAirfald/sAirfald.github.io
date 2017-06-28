@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Task_01</title>
+    <style>
+        #msg {
+            display: none;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            var msg = document.getElementById('msg');
+            var btn = document.getElementById('button');
+
+            btn.addEventListener('click', function () {
+                var value = document.getElementById('text').value;
+                var value = value.replace(/[^x00-xff]/g, 'AB');
+
+                if (value.length < 4 || value.length > 16) {
+                    msg.innerHTML = '请输入4到16位的数字';
+                    msg.style.color = 'red';
+                    msg.style.display = 'block';
+                } else {
+                    msg.innerHTML = '格式正确';
+                    msg.style.color = 'blue';
+                    msg.style.display = 'block';
+                }
+            }, false);
+        };
+    </script>
+</head>
+
+<body>
+    <dl>
+        <dt>校验规则：</dt>
+        <dd>1.字符数为4~16位</dd>
+        <dd>2.每个英文字母、数字、英文符号长度为1</dd>
+        <dd>3.每个汉字，中文符号长度为2</dd>
+    </dl>
+    <input id="text" type="text">
+    <input id="button" type="button" value="验证">
+    <p id="msg"></p>
+</body>
+
+</html>

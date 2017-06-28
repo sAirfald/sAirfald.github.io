@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>IFE-HTMl-Task-04</title>
+    <style type="text/css">
+        *.{
+            padding: 0;
+            margin: 0;
+        }
+        
+        .main{
+           width:400px;
+           height:200px;
+           position:absolute;
+           background-color: #ccc;
+           left:50%;  
+           top:50%;  /*相当于浏览器*/
+           margin:-100px 0 0 -200px;
+           overflow: hidden;
+       }
+
+       [class*=circle]{
+        width: 100px;
+        height: 100px;
+        background-color: #fc0;
+        border-radius: 50%;
+    }
+    .circle1{
+        position: relative;
+        top: -50px;
+        left: -50px;
+    }
+    .circle2{
+        position: relative;
+        top: 50px;
+        left: 350px;
+    }
+</style>
+</head>
+<body>
+    <div class="box">
+        <div class="main">
+            <div class="circle1"></div>
+            <div class="circle2"></div>
+        </div>
+    </div>
+</body>
+</html>
+
+
+
+ 
+<!-- 关于垂直居中的方法：
+1.先用绝对定位向右和下走父元素的50%，在用margin负值使元素走自身的50%；
+    <span style="font-size:18px;">.parent {  
+                width:800px;  
+                height:500px;  
+                border:2px solid #000;  
+                position:<strong>relative;</strong>  
+            }  
+            .child {  
+                width:300px;  
+                height:200px;  
+                margin:auto;  
+                position:absolute;/*设定水平和垂直偏移父元素的50%，  
+    再根据实际长度将子元素上左挪回一半大小*/  
+                left:50%;  
+                top:50%;  
+                margin-left: -150px;  
+                margin-top:-100px;  
+                background-color: red;  
+            }</span>
+2.绝对定位上下左右全都设置为0，margin：auto
+    <span style="font-size:18px;">.parent {  
+              width:800px;  
+              height:500px;  
+              border:2px solid #000;  
+              position:relative;  
+    }  
+     .child {  
+                width:200px;  
+                height:200px;  
+                margin: auto;
+                position: absolute;    
+               <strong> top: 0; left: 0; bottom: 0; right: 0; </strong>  
+                background-color: red;  
+    }</span>  
+
+3.祖先元素为display：table,父元素display:table-cell;vertical-align:middle,
+  <style type="text/css">  
+        *{  
+            margin:0;  
+            padding:0;  
+        }  
+        div.container{  
+            background-color:pink;  
+            border:2px solid #000;  
+            width:500px;  
+            height:500px;  
+            margin:0 auto;  
+            display:table;  
+            margin-top:20px;  
+              
+        }  
+        div.wrapper{  
+            text-align:center;  
+            display:table-cell;  
+            vertical-align:middle;  
+        }  
+        div.wrapper img{  
+            border:1px solid #ddd;  
+        }   </style>
+
+4.父元素table,子元素display:inline-block;
+parent {  
+            width:800px;  
+            height:500px;  
+            border:2px solid #000;  
+            display:table-cell;  
+            vertical-align:middle;  
+            text-align: center;  
+        }  
+        .child {  
+            width:200px;  
+            height:200px;  
+            display:inline-block;  
+            background-color: red;  
+        }
+
+           html,body{
+            height: 100%;    将宽度设为浏览器的高度
+        }
+        .box{
+             width：100%；
+             height:100%;
+             position:relative 或 absolute才有用！
+        }
+ -->

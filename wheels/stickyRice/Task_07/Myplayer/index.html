@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>音乐播放器</title>
+    <link rel="stylesheet" type="text/css" href="./css/main.css">
+</head>
+
+<body>
+    <div class="container clearfix">
+        <div class="play-list">
+            <div class="list-item">
+            </div>
+            <div class="scroll">
+                <a class="drag"></a>
+                <!--<a class="scroll-top"><img src="./img/down.jpg" alt="top"></a>-->
+                <!--<a class="scroll-bottom"><img src="./img/down.jpg" alt="down"></a>-->
+            </div>
+        </div>
+        <div class="controls">
+            <div class="music-title">勿忘心安</div>
+            <div class="music-artist">张杰</div>
+            <div class="current-time">
+                <span class="time">-2:29</span>
+                <span class="volume"></span>
+                <span class="volume-scroll"><span class="volume-value"></span></span>
+                <span class="lyric">词</span>
+            </div>
+            <div class="music-progress">
+                <div class="progress-value"></div>
+            </div>
+            <div class="like"></div>
+            <div class="music-button">
+                <a class="prev"></a>
+                <a class="toggle"></a>
+                <a class="next"></a>
+            </div>
+        </div>
+        <div class="pic"><img src="./img/pic.jpg" alt="图片" title="查看专辑信息"></div>
+    </div>
+    <div class="bg"></div>
+    <audio autoplay>
+        <source src="http://mr1.doubanio.com/d087a35554d58d9dc04485c9b92d423f/0/fm/song/p749701_128k.mp3">
+    </audio>
+    <script src="./js/playlist.js"></script>
+    <script src="./js/main.js"></script>
+
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+

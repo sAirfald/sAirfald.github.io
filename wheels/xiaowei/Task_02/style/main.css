@@ -1,0 +1,139 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+body{
+    background-color: #DEDEDE;
+}
+.header{
+    background-color: #333333;
+    height: 81px;
+}
+.header_left{
+    float: left;
+}
+.header_left img{
+    vertical-align: bottom;
+}
+.header_right{
+    float: right;
+}
+.header_right li{
+    float: left;
+    color: white;
+    margin-left: 30px;
+    line-height: 81px;
+}
+.header_right li:last-child{
+    margin-right: 20px;
+}
+.header_right li:last-child{
+    color: gray;
+}
+
+
+/*.container{
+    width: 1200px;
+    margin: 0 auto;
+    clear: both;
+    background-color: white;
+    padding: 10px;
+    }*/
+
+    .first,.second,.third,.four,.five{
+        width: 1200px;
+        margin: 0 auto;
+        margin-top: 20px;
+        padding: 20px;
+        background-color: white;
+        text-indent: 2em;
+        border-right: 2px solid gray;
+        border-bottom: 2px solid gray;
+    }
+    h3,.article{
+        color: gray;
+        line-height: 2em;
+    }
+    .second ul{
+        list-style-type: none;
+    }
+    .third img{
+        width: 150px;
+        height: 100px;
+        margin: 0 auto;
+        /*margin-left: 9px;*/
+    }
+    .img_border{
+        width: 170px;
+        border: 0.5px solid gray;
+        text-align: center;
+        line-height: 30px;
+        margin-left: 50px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    .third,.four{
+        text-indent: 0em;
+    }
+    .four ol{
+        margin: 15px 0 15px 60px;
+        text-indent: 0em;
+        font-weight: bold;
+    }
+    .four span{
+        font-weight: bold;
+    }
+    .four table{
+        border-collapse: collapse;
+        width: 1200px;
+        margin: 0 auto;
+
+    }
+    .four table th{
+        background-color: #333333;
+        color: white;
+        text-align: left;
+    }
+    .four table .table_foot{
+        background-color: gray;
+    }
+/*    .five form{
+        margin: 0 auto;
+    }
+*/
+    .five table{
+        margin: 0 auto;
+        width: 1200px;
+    }
+    .five table td{
+        padding: 10px 0;
+        /*width: 600px;*/
+    }
+    .five table tr td:first-child{
+        text-align: right;
+        padding-right: 5px;
+        width: 400px;
+    }
+    .five table tr span{
+        color: gray;
+    }
+
+    .five .submit{
+        width: 1200px;
+        height: 50px;
+        border-radius: 30px;
+        background-color: #3355D0;
+    }
+        .five .submit:hover{
+            background-color: orange;
+    }
+    .footer{
+        width: 100%;
+        height: 100px;
+        background-color: black;
+        color: white;
+        text-align: center;
+        line-height: 100px;
+        margin-top: 20px;
+    }

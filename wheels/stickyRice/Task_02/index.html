@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Task_02</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        .box {
+            width: 500px;
+            margin: 0 auto;
+            border: 1px solid #000;
+        }
+
+        input {
+            display: none;
+        }
+
+        label {
+            display: inline-block;
+            font-size: 16px;
+            line-height: 16px;
+            vertical-align: top;
+        }
+
+        .radio label i {
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            margin-right: 5px;
+            vertical-align: top;
+            background: url('spirt.png') no-repeat -24px -10px;
+        }
+
+        .checkBox label i {
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            margin-right: 5px;
+            vertical-align: top;
+            background: url('spirt.png') no-repeat -24px -32px;
+        }
+
+        .radio1:checked+label i {
+            background: url('spirt.png') no-repeat -59px -10px;
+        }
+
+        .fruit:checked+label i {
+            background: url('spirt.png') no-repeat -59px -32px;
+        }
+
+        .radio2 input+label::before {
+            display: inline-block;
+            width: 14px;
+            height: 14px;
+            margin-right: 5px;
+            content: ' ';
+            vertical-align: top;
+            border: 1px solid #ccc;
+            border-radius: 50%;
+        }
+
+
+        .radio2 input:checked+label::before {
+            width: 4px;
+            height: 4px;
+            padding: 5px;
+            border: 1px solid #d73d32;
+            background-color: #d73d32;
+            background-clip: content-box;
+        }
+
+        .checkBox1 input+label::before {
+            display: inline-block;
+            width: 14px;
+            height: 14px;
+            margin-right: 5px;
+            content: ' ';
+            vertical-align: top;
+            border: 1px solid #ccc;
+        }
+
+        .checkBox1 input:checked+label::before {
+            width: 6px;
+            height: 6px;
+            padding: 4px;
+            border: 1px solid #d73d32;
+            background-color: #d73d32;
+            background-clip: content-box;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <h2 style="font-size:30px;">雪碧图</h2>
+        <div class="radio">
+            <input class="radio1" id="man" type="radio" name="sex">
+            <label for="man"><i></i>男</label>
+            <input class="radio1" id="woman" type="radio" name="sex">
+            <label for="woman"><i></i>女</label>
+        </div>
+
+        <div class="checkBox">
+            <input class="fruit" id="apple" type="checkbox">
+            <label for="apple"><i></i>苹果</label>
+            <input class="fruit" id="pears" type="checkbox">
+            <label for="pears"><i></i>梨子</label>
+            <input class="fruit" id="bananas" type="checkbox">
+            <label for="bananas"><i></i>香蕉</label>
+        </div>
+        <h2 style="font-size:30px;">伪元素</h2>
+
+        <div class="radio2">
+            <input class="radio3" id="man1" type="radio" name="sex1">
+            <label for="man1">男</label>
+            <input class="radio3" id="woman1" type="radio" name="sex1">
+            <label for="woman1">女</label>
+        </div>
+
+        <div class="checkBox1">
+            <input class="fruit1" id="apple1" type="checkbox">
+            <label for="apple1"><i></i>苹果</label>
+            <input class="fruit1" id="pears1" type="checkbox">
+            <label for="pears1"><i></i>梨子</label>
+            <input class="fruit1" id="bananas1" type="checkbox">
+            <label for="bananas1"><i></i>香蕉</label>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+</body>
+
+</html>

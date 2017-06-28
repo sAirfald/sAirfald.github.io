@@ -1,0 +1,689 @@
+/*public*/
+
+.clearfix::after {
+    display: block;
+    content: "";
+    clear: both;
+}
+
+.clearfix {
+    zoom: 1;
+}
+
+
+/*public*/
+
+
+/*header*/
+
+header {
+    height: 56px;
+}
+
+header .logo {
+    margin-left: 59px;
+    padding-left: 42px;
+    line-height: 61px;
+    font-family: "黑体";
+    font-size: 21px;
+    color: #393a3a;
+    background: url("../images/logo.jpg") no-repeat;
+}
+
+header nav {
+    float: right;
+}
+
+header nav a {
+    display: inline-block;
+    padding-top: 17px;
+    padding-bottom: 22px;
+    padding-left: 20px;
+    padding-right: 17px;
+    margin-right: 12px;
+    font-size: 14px;
+    color: #787b83;
+    text-decoration: none;
+}
+
+header nav .active {
+    color: #ea6f6e;
+    border-bottom: 4px solid #ea6f6e;
+}
+
+header nav .login {
+    margin-right: 59px;
+    background: url("../images/login.jpg") no-repeat 0 15px;
+}
+
+
+/*end header*/
+
+
+/*banner*/
+
+.banner {
+    position: relative;
+}
+
+.banner img {
+    width: 100%;
+    height: 705px;
+}
+
+.banner .cover {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 705px;
+    background-color: #000;
+    opacity: 0.2;
+    filter: alpha(opacity=20);
+}
+
+.banner .cover-text {
+    position: absolute;
+    left: 116px;
+    top: 230px;
+    font-family: "微软雅黑";
+    color: #fff;
+}
+
+.banner .cover-text h2 {
+    font-size: 60px;
+    font-weight: normal;
+    margin-bottom: 25px;
+}
+
+.banner .cover-text p {
+    margin-bottom: 62px;
+    font-size: 21px;
+    line-height: 32px;
+}
+
+.banner .cover-text a {
+    display: inline-block;
+    height: 65px;
+    padding: 0 100px;
+    line-height: 65px;
+    font-size: 30px;
+    text-decoration: none;
+    color: #fff;
+    background-color: #e74f4d;
+}
+
+.description {
+    height: 253px;
+    width: 100%;
+}
+
+.description ul {
+    margin-top: 45px;
+}
+
+.description li {
+    float: left;
+    width: 154px;
+    text-align: center;
+    list-style-type: none;
+    /*border: 1px solid #000;*/
+}
+
+.description em {
+    display: inline-block;
+    width: 42px;
+    height: 42px;
+    margin-bottom: 46px;
+}
+
+.description li p {
+    font-family: "黑体";
+    font-size: 14px;
+    line-height: 16px;
+}
+
+.description span {
+    float: left;
+    height: 50px;
+    margin-top: 89px;
+    border-right: 2px solid #aaa;
+}
+
+.description li:nth-of-type(1) {
+    padding-left: 88px;
+    padding-right: 82px;
+}
+
+.description li:nth-of-type(2) {
+    padding-left: 94px;
+    padding-right: 85px;
+}
+
+.description li:nth-of-type(3) {
+    padding-left: 71px;
+    padding-right: 92px;
+}
+
+.description li:nth-of-type(4) {
+    padding-left: 71px;
+}
+
+.description li:nth-of-type(1) em {
+    background: url("../images/sprite3.jpg") no-repeat 0 0;
+}
+
+.description li:nth-of-type(2) em {
+    background: url("../images/sprite3.jpg") no-repeat -43px 0;
+}
+
+.description li:nth-of-type(3) em {
+    background: url("../images/sprite3.jpg") no-repeat -88px 0;
+}
+
+.description li:nth-of-type(4) em {
+    background: url("../images/sprite3.jpg") no-repeat -140px 0;
+}
+
+
+/*end banner*/
+
+
+/*main*/
+
+
+.main .activity .question {
+    height: 362px;
+    text-align: center;
+    background-color: #ececec;
+}
+
+.main .activity .question .big-logo {
+    display: inline-block;
+    width: 91px;
+    height: 92px;
+    margin-top: 89px;
+    background: url("../images/big-logo.png") no-repeat;
+}
+
+.main .activity .question .question-text {
+    margin-top: 50px;
+    margin-left: 216px;
+    font-family: "黑体";
+    font-size: 53px;
+    color: #a1a1a1;
+}
+
+.activity-form {
+    position: relative;
+    width: 100%;
+    height: 341px;
+    text-align: center;
+    background: url("../images/pic2.png") no-repeat;
+    background-size: cover;
+    overflow: hidden;
+}
+
+.activity-form .layer {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    font-family: "微软雅黑";
+    background-color: red;
+    opacity: .2;
+    filter: alpha(opacity=20);
+}
+
+.activity-form h2 {
+    position: absolute;
+    left: 500px;
+    top: 53px;
+    font-size: 21px;
+    color: #fff;
+}
+
+.activity-form .line {
+    position: absolute;
+    display: inline-block;
+    width: 30px;
+    top: 83px;
+    left: 602px;
+    border-bottom: 2px solid #fff;
+}
+
+.activity-form p {
+    position: absolute;
+    left: 450px;
+    top: 105px;
+    font-size: 12px;
+    color: #fff;
+}
+
+.activity-form form {
+    position: absolute;
+    left: 125px;
+    top: 170px;
+}
+
+.activity-form form div {
+    position: relative;
+    float: left;
+    width: 235px;
+    height: 35px;
+    margin-right: 28px;
+}
+
+.activity-form form select {
+    width: 235px;
+    height: 35px;
+}
+
+.activity-form form div em {
+    position: absolute;
+    width: 19px;
+    height: 18px;
+    left: 210px;
+    top: 8px;
+    background: url("../images/down.jpg");
+}
+
+.activity-form .search {
+    width: 235px;
+    height: 35px;
+    border: none;
+    background-color: #be4f48;
+}
+
+.main .pic-wall {
+    padding-left: 148px;
+    padding-right: 148px;
+    padding-top: 102px;
+    padding-bottom: 113px;
+    text-align: center;
+    font-family: "微软雅黑";
+    background-color: #f7f7f7;
+}
+
+.main .pic-wall li {
+    float: left;
+    margin-right: 35px;
+    list-style-type: none;
+}
+
+.main .pic-wall li img {
+    padding: 12px 9px;
+    border: 1px solid #dadada;
+}
+
+.main .pic-wall li h2 {
+    height: 38px;
+    line-height: 38px;
+    font-size: 14px;
+}
+
+.main .pic-wall li p {
+    font-size: 12px;
+    color: #bdbdbd;
+}
+
+.main .pic-wall .shanghai h2 {
+    height: 30px;
+    font-size: 20px;
+    line-height: 30px;
+}
+
+.main .pic-wall .shanghai p {
+    line-height: 22px;
+}
+
+.detail .detail-pic1 {
+    position: relative;
+    float: left;
+    width: 851px;
+    height: 567px;
+}
+
+.detail .detail-pic1 .layer1 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    font-family: "微软雅黑";
+    color: #fff;
+}
+
+.detail .detail-pic1 .layer1 h2 {
+    margin-top: 120px;
+    margin-left: 352px;
+    font-size: 50px;
+    font-weight: normal;
+}
+
+.detail .detail-pic1 .layer1 .text {
+    margin-left: 238px;
+    margin-top: -16px;
+    margin-bottom: 8px;
+    line-height: 156px;
+    font-size: 156px;
+    vertical-align: top;
+}
+
+.detail .detail-pic1 .layer1 .time,
+.detail .detail-pic1 .layer1 .city {
+    margin-left: 348px;
+    font-size: 22px;
+    line-height: 44px;
+}
+
+.detail .detail-pic1 .left {
+    position: absolute;
+    top: 268px;
+    right: 0;
+    width: 26px;
+    height: 31px;
+    margin-right: -1px;
+    background: url("../images/left.png") no-repeat;
+}
+
+.detail .detail-text1 {
+    float: left;
+    width: 496px;
+    height: 567px;
+}
+
+.detail .detail-text1 .text1-wrap {
+    width: 290px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.text1-wrap .title {
+    margin-top: 164px;
+    margin-bottom: 20px;
+    font-size: 21px;
+}
+
+.text1-wrap p {
+    font-family: "宋体";
+    font-size: 12px;
+    line-height: 30px;
+    color: #b7b7b7;
+}
+
+.text1-wrap button {
+    margin-top: 41px;
+    width: 104px;
+    height: 32px;
+    color: #ea9294;
+    background-color: #fff;
+    border: 1px solid #ea9294;
+}
+
+.text1-wrap .circle {
+    margin-top: 24px;
+    line-height: 12px;
+}
+
+.text1-wrap .circle span {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    line-height: 12px;
+    margin-right: 14px;
+    border-radius: 50%;
+    border: 1px solid #929292;
+}
+
+.text1-wrap .circle .circle-active {
+    background-color: #929292;
+}
+
+.detail-text2,
+.detail-text3 {
+    float: left;
+    width: 425px;
+    height: 521px;
+    text-align: center;
+}
+
+.detail-text2 {
+    color: #fff;
+    background-color: #e74f4d;
+}
+
+.detail-text3 {
+    color: #000;
+    background-color: #fff;
+}
+
+.detail-pic2 {
+    float: left;
+    width: 497px;
+    height: 521px;
+}
+
+.detail-text2 p,
+.detail-text3 p {
+    margin-top: 172px;
+    margin-bottom: 20px;
+    font-family: "黑体";
+    font-size: 21px;
+    line-height: 30px;
+}
+
+.detail-text2 em,
+.detail-text3 em {
+    display: inline-block;
+    width: 30px;
+    border-bottom: 2px solid #fff;
+}
+
+.detail-text2 button,
+.detail-text3 button {
+    width: 166px;
+    height: 40px;
+    margin-top: 20px;
+    background-color: transparent;
+    border: 1px solid #fff;
+}
+
+.detail-text3 button {
+    color: #e74f4d;
+    border: 1px solid #e74f4d;
+}
+
+
+/*end main*/
+
+
+/*joinus*/
+
+.joinus-text {
+    height: 300px;
+    text-align: center;
+    overflow: hidden;
+}
+
+.joinus-text h2 {
+    margin-top: 116px;
+    font-family: "黑体";
+    font-size: 21px;
+    font-weight: normal;
+}
+
+.joinus-text p {
+    margin-top: 7px;
+    font-family: "微软雅黑";
+    font-size: 12px;
+    line-height: 20px;
+    color: #c9c9c9;
+}
+
+.joinus-text span {
+    display: inline-block;
+    width: 30px;
+    border-top: 2px solid #e74f4d;
+}
+
+.joinus-detail {
+    float: left;
+    width: 290px;
+    padding-left: 138px;
+    padding-right: 76px;
+}
+
+.joinus-detail .section {
+    margin-bottom: 40px;
+}
+
+.joinus-detail .section h2 {
+    margin-bottom: 14px;
+    font-family: "黑体";
+    font-size: 14px;
+    font-weight: normal;
+    color: #979594;
+}
+
+.joinus-detail .section p,
+.joinus-detail .section span {
+    font-family: "宋体";
+    font-size: 12px;
+    line-height: 20px;
+    color: #c3c2c2;
+}
+
+.joinus-detail .section span {
+    float: right;
+    padding-left: 15px;
+    background: url("../images/down2.jpg") no-repeat left center;
+}
+
+.joinus-form {
+    padding-bottom: 166px;
+}
+
+.joinus-form input {
+    float: left;
+    width: 294px;
+    height: 40px;
+    padding-left: 16px;
+    margin-right: 16px;
+    margin-bottom: 14px;
+    background-color: #edecee;
+    border: none;
+}
+
+.joinus-form textarea {
+    width: 620px;
+    height: 110px;
+    padding-left: 16px;
+    padding-top: 10px;
+    margin-bottom: 14px;
+    background-color: #edecee;
+    border: none;
+}
+
+.joinus-form button {
+    display: block;
+    width: 636px;
+    height: 40px;
+    background-color: #edecee;
+    border: none;
+}
+
+
+/*end joinus*/
+
+.contact {
+    height: 358px;
+    text-align: center;
+    color: #fff;
+    background-color: #32353e;
+    overflow: hidden;
+}
+
+.contact h2 {
+    margin-top: 90px;
+    font-family: "黑体";
+    font-size: 21px;
+    font-weight: normal;
+}
+
+.contact p {
+    margin-top: 9px;
+    margin-bottom: 28px;
+    font-family: "宋体";
+    font-size: 12px;
+    line-height: 18px;
+}
+
+.contact input,
+.contact button {
+    width: 430px;
+    height: 40px;
+    border: none;
+}
+
+.contact button {
+    width: 80px;
+    margin-left: -5px;
+}
+
+.contact .share {
+    margin-top: 36px;
+}
+
+.contact .share em {
+    display: inline-block;
+    width: 24px;
+    height: 25px;
+    margin-right: 28px;
+}
+
+.contact .share em:nth-of-type(1) {
+    background: url("../images/spirte.jpg") no-repeat;
+}
+
+.contact .share em:nth-of-type(2) {
+    background: url("../images/spirte.jpg") no-repeat -25px 0;
+}
+
+.contact .share em:nth-of-type(3) {
+    background: url("../images/spirte.jpg") no-repeat -54px 0;
+}
+
+.contact .share em:nth-of-type(4) {
+    background: url("../images/spirte.jpg") no-repeat -82px 0;
+}
+
+
+/*footer*/
+
+footer {
+    height: 60px;
+    font-family: "宋体";
+    font-size: 12px;
+    color: #fff;
+    background-color: #303039;
+    overflow: hidden;
+}
+
+footer p {
+    margin-top: 30px;
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+footer p .text {
+    float: left;
+}
+
+footer p .back {
+    float: right;
+}
+
+
+/*end footer*/

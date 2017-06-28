@@ -1,0 +1,46 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-size: 14px;
+}
+.container{
+    background-color: #eee;
+    border: 1px solid #999;
+    padding: 20px;
+    margin: 20px 20px;
+}
+.left{
+    width: 200px;
+    background-color: white;
+    padding: 20px;
+    border: 1px solid #999;
+    float: left;
+}
+.left img{
+    vertical-align: middle;
+    margin-right: 20px;
+}
+.main{
+    padding: 20px;
+    background-color: white;
+    border: 1px solid;
+    margin-left: 250px;
+    margin-right: 200px;
+}
+.right{
+    width: 120px;
+    padding: 20px;
+    background-color: white;
+    text-align: center;
+    float: right;
+}
+.right img{
+    vertical-align: middle;
+    margin-top: 15px;
+}
+.right img:first-child{
+    margin-top: 0;
+}
+.clear{
+    clear: both;
+}

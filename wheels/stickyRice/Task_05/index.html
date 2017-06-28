@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Task_05</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        .box {
+            display: flex;
+            width: 300px;
+            height: 300px;
+            margin: 0 auto;
+            border: 1px solid blue;
+        }
+
+        .container {
+            position: relative;
+            width: 102px;
+            height: 102px;
+            margin: auto;
+            border: 1px solid #000;
+        }
+
+        .circle {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            border: 2px solid red;
+            border-bottom-color: transparent;
+            border-radius: 50px;
+            animation: ring 1s linear infinite ;
+        }
+
+        .small-circle1 {
+            position: absolute;
+            width: 0;
+            height: 0;
+            left: 10px;
+            top: 10px;
+            border: 40px solid pink;
+            border-bottom-color: transparent;
+            border-left-color: transparent;
+            border-radius: 40px;
+            animation: left-ring 5s linear infinite;
+
+        }
+
+        .small-circle2 {
+            position: absolute;
+            width: 0;
+            height: 0;
+            left: 10px;
+            top: 10px;
+            border: 40px solid red;
+            border-bottom-color: transparent;
+            border-left-color: transparent;
+            border-radius: 40px;
+            animation: right-ring 5s linear infinite;
+        }
+
+        .circle-background {
+            position: absolute;
+            width: 0;
+            height: 0;
+            left: 10px;
+            top: 10px;
+            border-top: 40px solid pink;
+            border-right: 40px solid pink;
+            border-left: 40px solid red;
+            border-bottom: 40px solid red;
+            border-radius: 40px;
+        }
+
+        @keyframes ring {
+            0% {
+                transform: rotate(0deg);
+            }
+            100%{
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes left-ring {
+            0% {
+                transform: rotate(0deg);
+            }
+            25% {
+                transform: rotate(180deg);
+            }
+            50% {
+                transform: rotate(180deg);
+                z-index: 3;
+            }
+            75% {
+                transform: rotate(360deg);
+                z-index: 3;
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes right-ring {
+            0% {
+                transform: rotate(0deg);
+                z-index: 3;
+            }
+            25% {
+                transform: rotate(0deg);
+                z-index: 3;
+            }
+            25.001% {
+                transform: rotate(0deg);
+                z-index: 2;
+            }
+            50% {
+                transform: rotate(180deg);
+                z-index: 2;
+            }
+            75% {
+                transform: rotate(180deg);
+                z-index: 2;
+            }
+            75.001% {
+                transform: rotate(180deg);
+                z-index: 3;
+            }
+            100% {
+                transform: rotate(360deg);
+                z-index: 3;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="container">
+            <div class="circle"></div>
+            <div class="circle-background"></div>
+            <div class="small-circle1"></div>
+            <div class="small-circle2"></div>
+        </div>
+    </div>
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .loading {
+            width: 200px;
+            height: 200px;
+            position: absolute;
+            left: calc(50vw - 100px);
+            top: calc(50vh - 100px);
+        }
+        .ring {
+            width: 180px;
+            height: 180px;
+            position: absolute;
+            left: 10px;
+            top: 10px;
+            border-radius: 90px;
+            border: 2px solid rgb(255, 41, 140);
+            border-top-color: transparent;
+            animation: ring 0.8s linear infinite;
+        }
+        .background {
+            width: 0;
+            height: 0;
+            position: absolute;
+            left: 40px;
+            top: 40px;
+            border: 60px solid rgb(251, 139, 189);
+            border-left-color: rgb(255, 41, 140);
+            border-bottom-color: rgb(255, 41, 140);
+            border-radius: 60px;
+        }
+        .left {
+            width: 0;
+            height: 0;
+            position: absolute;
+            left: 40px;
+            top: 40px;
+            border: 60px solid green;
+            border-radius: 60px;
+            border-left-color: transparent;
+            border-bottom-color: transparent;
+            z-index: 3;
+            animation: left 5s linear infinite;
+        }
+        .right {
+            width: 0;
+            height: 0;
+            position: absolute;
+            left: 40px;
+            top: 40px;
+            border: 60px solid yellow;
+            border-radius: 60px;
+            border-left-color: transparent;
+            border-bottom-color: transparent;
+            z-index: 2;
+            animation: right 5s linear infinite;
+        }
+        @keyframes ring {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+        @keyframes left {pink
+            0% {
+                transform: rotate(0deg);
+            }
+            25% {
+                transform: rotate(180deg);
+            }
+            50% {
+                transform: rotate(180deg);
+                z-index: 3;
+            }
+            75% {
+                transform: rotate(360deg);
+                z-index: 3;
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes right {
+            0% {
+                transform: rotate(0deg);
+                z-index: 3;
+            }
+            25% {
+                transform: rotate(0deg);
+                z-index: 3;
+            }
+            25.001% {
+                transform: rotate(0deg);
+                z-index: 2;
+            }
+            50% {
+                transform: rotate(180deg);
+                z-index: 2;
+            }
+            75% {
+                transform: rotate(180deg);
+                z-index: 2;
+            }
+            75.001% {
+                transform: rotate(180deg);
+                z-index: 3;
+            }
+            100% {
+                transform: rotate(360deg);
+                z-index: 3;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="loading">
+    <div class="background"></div>
+    <div class="left"></div>
+    <div class="right"></div>
+    <div class="ring"></div>
+</div>
+</body>
+</html>
+-->

@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Task_06</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        html,
+        body {
+            height: 100%;
+        }
+
+        body {
+            position: relative;
+        }
+
+        #button {
+            width: 100%;
+            height: 50px;
+            background-color: blue;
+            border-radius: 30px;
+        }
+
+        #layer {
+            /*display: none;*/
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #000;
+            opacity: 0.5;
+        }
+
+        #panel {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 500px;
+            height: 300px;
+            color: #000;
+            border: 2px solid #ccc;
+            background-color: #fff;
+        }
+
+        #panel h2 {
+            height: 50px;
+            color: #fff;
+            border-bottom: 1px solid #000;
+            background-color: green;
+        }
+
+        #panel .buttons {
+            position: absolute;
+            right: 0;
+            bottom: 0;
+        }
+
+        #panel .buttons button {
+            width: 50px;
+            height: 40px;
+            margin-right: 10px;
+            border: 1px solid #000;
+            background-color: green;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            var oBtn = document.getElementById('button');
+            var oLayer = document.getElementById('layer');
+            var oPanel = document.getElementById('panel');
+            var aBtn = oPanel.getElementsByTagName('button');
+            var oBody = document.getElementsByTagName('body')[0];
+            aBtn[0].onclick = hide;
+            aBtn[1].onclick = hide;
+            document.onclick = hide;
+
+            oBtn.onclick = function (ev) {
+                show();
+                stop(ev);
+                middle();
+            };
+            oPanel.onclick = stop;
+            document.onscroll = function () {
+                middle();
+                layerHeight();
+            };
+
+            ///////////////////////////////////////////////////////////////////////////////
+            init();
+
+            function init() {
+                middle();
+                layerHeight();
+            }
+
+            function layerHeight() {
+                oLayer.style.height = parseInt(getStyle(oBody,'height')) + document.body.scrollTop + 'px';
+            }
+
+            function getStyle(obj, attr) {
+                if (obj.currentStyle) {
+                    return obj.currentStyle[attr];
+                } else {
+                    return getComputedStyle(obj, false)[attr];
+                }
+            }
+
+            function stop(ev) {
+                ev = ev || event;
+                if (ev.stopPropagation) {
+                    ev.stopPropagation();
+                } else {
+                    cancleBulle = true;
+                }
+            }
+
+            function hide() {
+                oLayer.style.display = 'none';
+                oPanel.style.display = 'none';
+            }
+
+            function show() {
+                oLayer.style.display = 'block';
+                oPanel.style.display = 'block';
+            }
+
+            function middle() {
+                oPanel.style.top = document.body.scrollTop + (document.body.clientHeight - oPanel.offsetHeight) / 2 +
+                    'px';
+                oPanel.style.left = document.body.scrollLeft + (document.body.clientWidth - oPanel.offsetWidth) / 2 +
+                    'px';
+                    console.log(document.body.scrollLeft);
+                    console.log(document.body.clientWidth);
+                    console.log(oPanel.offsetWidth);
+
+            }
+
+        };
+    </script>
+</head>
+
+<body>
+    <button id="button">弹出浮出层</button>
+    <div id="layer"></div>
+    <div id="panel">
+        <h2>这是一个浮出层</h2>
+        <p>这是一个浮出层</p>
+        <div class="buttons">
+            <button>确定</button>
+            <button>取消</button>
+        </div>
+    </div>
+
+
+
+
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br> fsdaf
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+
+</body>
+
+</html>

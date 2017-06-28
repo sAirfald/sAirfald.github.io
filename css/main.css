@@ -360,6 +360,24 @@ body {
 
 }
 
+/*friends end */
+
+/*wheels*/
+.wheel-container a {
+    margin-top: 10px;
+    margin-right: 20px;
+    margin-bottom: 10px;
+}
+
+.wheel-container .links {
+    float: left;
+    /*margin-bottom: 20px;*/
+}
+
+/*.wheel-container row {
+    float: left;
+    margin-bottom: 10px;
+}*/
 
 
 
@@ -372,9 +390,16 @@ body {
 
 
 
-/*friends*/
 
 
+
+
+
+
+
+
+
+/*end wheels*/
 
 
 

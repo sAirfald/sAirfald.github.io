@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Task_07</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        .box {
+            width: 800px;
+            height: 1000px;
+            margin: 0 auto;
+        }
+
+        #table {
+            text-align: center;
+            border-collapse: collapse;
+            border: 1px solid #ccc;
+        }
+
+        #table tr {
+            height: 50px;
+        }
+
+        #table thead th {
+            color: #fff;
+            background-color: #3C3C3C;
+        }
+
+        #table th,
+        #table td {
+            width: 120px;
+        }
+
+        .upCaret {
+            position: relative;
+            left: 5px;
+            top: -7px;
+            display: inline-block;
+            border-top: none;
+            border-bottom: 10px solid #fff;
+            border-left: 10px solid transparent;
+            border-right: 10px solid transparent;
+        }
+
+        .downCaret {
+            position: relative;
+            left: -19px;
+            top: 7px;
+            display: inline-block;
+            border-bottom: none;
+            border-top: 10px solid #fff;
+            border-left: 10px solid transparent;
+            border-right: 10px solid transparent;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            var aUpCaret = document.getElementsByClassName('upCaret');
+            var aDownCaret = document.getElementsByClassName('downCaret');
+
+            var data = {
+                xiaohong: {
+                    name: "小红",
+                    chinese: 100,
+                    math: 90,
+                    English: 70
+                },
+                xiaotao: {
+                    name: "小桃",
+                    chinese: 100,
+                    math: 40,
+                    English: 80
+                },
+                xiaozhang: {
+                    name: "小张",
+                    chinese: 60,
+                    math: 78,
+                    English: 88
+                },
+                xiaohua: {
+                    name: "小花",
+                    chinese: 79,
+                    math: 68,
+                    English: 39
+                }
+            };
+
+            function createElement(data) {
+                var oTbody = document.getElementsByTagName('tbody')[0];
+                for (var key in data) {
+                    var total = 0;
+                    var oTr = document.createElement('tr');
+
+                    for (var subKey in data[key]) {
+                        var oTd = document.createElement('td');
+                        oTd.innerHTML = data[key][subKey];
+                        oTr.appendChild(oTd);
+                        if (!isNaN(data[key][subKey])) {
+                            total = total + data[key][subKey];
+                        }
+                    }
+
+                    var oTd = document.createElement('td');
+                    oTd.innerHTML = total;
+                    oTr.appendChild(oTd);
+                    oTbody.appendChild(oTr);
+                }
+            }
+
+            function initIndex(obj, dir) {
+                if (dir === 'up') {
+                    for (var i = 0; i < obj.length; i++) {
+                        obj[i].index = i + 1;
+                        obj[i].onclick = function () {
+                            var _this = this;
+                            dirSort('up',_this);
+                        };
+                    }
+                } else if (dir === 'down') {
+                    for (var i = 0; i < obj.length; i++) {
+                        obj[i].index = i + 1;
+                        obj[i].onclick = function () {
+                            var _this = this;
+                            dirSort('down',_this);
+                        };
+                    }
+                }
+            }
+
+            function dirSort(dir,_this) {
+                var aTr = document.getElementsByTagName('tr');
+                var index = _this.index;
+                var arr = [];
+                for (var i = 1; i < aTr.length; i++) {
+                    arr.push(aTr[i]);
+                }
+
+                arr.sort(function (tr1, tr2) {
+                    if (dir === 'up') {
+                        return parseInt(tr2.children[index].innerHTML) - parseInt(tr1.children[index].innerHTML);
+                    } else if (dir === 'down') {
+                        return parseInt(tr1.children[index].innerHTML) - parseInt(tr2.children[index].innerHTML);
+                    }
+                });
+                for (var i = 0; i < arr.length; i++) {
+                    arr[i].parentElement.appendChild(arr[i]);
+                }
+            }
+
+            createElement(data);
+            initIndex(aUpCaret,'up');
+            initIndex(aDownCaret,'down');
+
+        };
+    </script>
+</head>
+
+<body>
+    <div class="box">
+        <h2>点击科目旁的箭头选择排序方式</h2>
+        <table id="table" border="1">
+            <thead>
+                <tr>
+                    <th>姓名
+                    </th>
+                    <th>语文
+                        <span class="upCaret"></span>
+                        <span class="downCaret"></span>
+                    </th>
+                    <th>数学
+                        <span class="upCaret"></span>
+                        <span class="downCaret"></span>
+                    </th>
+                    <th>英语
+                        <span class="upCaret"></span>
+                        <span class="downCaret"></span>
+                    </th>
+                    <th>总分
+                        <span class="upCaret"></span>
+                        <span class="downCaret"></span>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>小黑</td>
+                    <td>80</td>
+                    <td>30</td>
+                    <td>50</td>
+                    <td>160</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+
+</html>

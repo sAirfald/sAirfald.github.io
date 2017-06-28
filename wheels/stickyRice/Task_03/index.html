@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Task_03</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        .box {
+            position: relative;
+            height: 300px;
+            margin: 20px;
+            background: #eee;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+        }
+
+        .contextMenu {
+            display: none;
+            position: absolute;
+            left: 0;
+            top: 0;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+        }
+
+        .contextMenu h2 {
+            height: 40px;
+            padding-left: 10px;
+            padding-right: 30px;
+            line-height: 40px;
+            font-weight: 400;
+            font-size: 16px;
+        }
+
+        .contextMenu h2:hover {
+            background-color: #eee;
+            cursor: pointer;
+        }
+    </style>
+
+    <script>
+        window.onload = function () {
+
+            var oBox = document.getElementsByClassName('box')[0];
+            var oContextMenu = document.getElementsByClassName('contextMenu')[0];
+
+            oBox.addEventListener('contextmenu', position, false);
+
+            function position(ev) {
+                ev = ev || event;
+                oContextMenu.style.display = 'block';
+                var left = ev.clientX - oBox.offsetLeft;
+                var top = ev.clientY - oBox.offsetTop;
+
+                if (left + oContextMenu.offsetWidth > oBox.offsetWidth) {
+                    left = left - oContextMenu.offsetWidth;
+                }
+                if (top + oContextMenu.offsetHeight > oBox.offsetHeight) {
+                    top = top - oContextMenu.offsetHeight;
+                }
+                if (left < 0) {
+                    left = 0;
+                }
+                if (top < 0) {
+                    top = 0;
+                }
+
+                oContextMenu.style.left = left + 'px';
+                oContextMenu.style.top = top + 'px';
+
+                if (ev.preventDefault) {
+                    ev.preventDefault();
+                }
+                return false;
+            }
+
+            document.addEventListener('click', function () {
+                oContextMenu.style.display = 'none';
+            }, false);
+
+            function getStyle(obj, attr) {
+                return obj.currentStyle ? obj.currentStyle[attr] : getComputedStyle(obj)[attr];
+            }
+        };
+    </script>
+</head>
+
+<body>
+    <div class="box">
+        区域内点击右键，查看效果
+        <div class="contextMenu">
+            <h2>Menu Item 1</h2>
+            <h2>Menu Item 2</h2>
+            <h2>Menu Item 3</h2>
+            <h2>Menu Item 4</h2>
+        </div>
+    </div>
+</body>
+
+</html>

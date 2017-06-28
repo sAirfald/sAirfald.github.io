@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Task_05</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0
+        }
+        .panel {
+            width: 850px;
+            margin: 0 auto;
+            border: 1px solid #eee;
+        }
+
+        .panel-item {
+            width: 800px;
+            margin: 5px auto;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+
+        }
+
+        .panel-item label {
+            display: block;
+            padding: 10px 20px;
+            background-color: #eee;
+        }
+
+        .panel input {
+            display: none;
+        }
+
+        .panel-content {
+            height: 0;
+            padding: 0 20px;
+            overflow: hidden;
+            transition: all 1s;
+        }
+
+        input[type="radio"]:checked + .panel-content {
+            padding: 20px;
+            height: 100px;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="panel">
+        <div class="panel-item">
+            <label class="panel-head" for="item1">Collapsible Group Item #1</label>
+            <input id="item1" type="radio" name="panel">
+            <div class="panel-content">
+                <p>1Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum delectus beatae accusamus fugit consequuntur temporibus blanditiis quidem illum at harum id, voluptates perferendis tempore, veniam corporis, nesciunt distinctio magni ipsa. </p>
+            </div>
+        </div>
+        <div class="panel-item">
+            <label class="panel-head" for="item2">Collapsible Group Item #2</label>
+            <input id="item2" type="radio" name="panel">
+            <div class="panel-content">
+                <p>1Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum delectus beatae accusamus fugit consequuntur temporibus blanditiis quidem illum at harum id, voluptates perferendis tempore, veniam corporis, nesciunt distinctio magni ipsa. </p>
+            </div>
+        </div>
+        <div class="panel-item">
+            <label class="panel-head" for="item3">Collapsible Group Item #3</label>
+            <input id="item3" type="radio" name="panel">
+            <div class="panel-content">
+                <p>1Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum delectus beatae accusamus fugit consequuntur temporibus blanditiis quidem illum at harum id, voluptates perferendis tempore, veniam corporis, nesciunt distinctio magni ipsa. </p>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+</body>
+
+</html>
