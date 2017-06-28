@@ -172,12 +172,6 @@
                 handClick(event.data.type);
             });
 
-
-
-
-
-
-
             function handClick(type) {
                 //此处先把上一次的移除否则会叠加
                 $('.news-load-more').off('click');
@@ -217,7 +211,11 @@
                             newThubmail.find('h3').text(obj[0]['title'] + '...');
                             newThubmail.find('.news-time').text(obj[0]['time']);
                             $('.load-more').before(newThubmail);
-                        });
+                        },
+                    );
+                    },
+                    error: function () {
+                        $('.news-content').html('<h2 class="text-center">抱歉接口出了一点小问题！工程师正在拼命抢救中...</h2>');
                     }
                 });
             }

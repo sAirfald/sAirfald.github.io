@@ -33,7 +33,7 @@
                             <td class="active">风景美图</td>
                         </tr>
                         <tr>
-                            <td>个人相册</td>
+                            <td>我的位置</td>
                         </tr>
                     </tbody>
                 </table>
@@ -49,7 +49,9 @@
                     </li>
                 </ul>
                 <div class="col-lg-12 load-more picture-load-more text-center">
-                    <a class="btn btn-primary">加载更多...</a>
+                    <a class="btn btn-primary">正在加载中...</a>
+                </div>
+                <div id="map-container">
                 </div>
 
             </div>
@@ -57,35 +59,57 @@
         </div>
     </div>
 
-
-
     <!--jquery-->
     <script src="./js/jquery-3.2.1.min.js"></script>
     <!--bootstrap-->
     <script src="./js/bootstrap.min.js"></script>
     <!--main-->
     <script src="./js/main.js"></script>
+    <!--map -->
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=N7jvta811ve0wcOGGrqCXwFmU22e1MI4"></script>
+
     <script>
         $(function () {
             var start = 1;
             var end = 1;
             var onOff = true;
             addList(start, 20);
+            $('#map-container').css('display', 'none');
 
             $('.table td').on('click', function () {
                 $('.table td').removeClass('active');
                 $(this).addClass('active');
             });
 
-            // $('.picture-table td:eq(0)').on('click', function () {
+            $('.picture-table td:eq(0)').on('click', function () {
+                $('.picture-list').css('display', 'block');
+                $('.picture-load-more').css('display', 'block');
+                $('#map-container').css('display', 'none');
+                $('.picture-list li').html('');
+                addList(1, 20);
+            });
 
-            // });
+            $('.picture-table td:eq(1)').on('click', function () {
+                $('.picture-list').css('display', 'none');
+                $('.picture-load-more').css('display', 'none');
+                initMap();
+            });
 
 
-            // $('.picture-table td:eq(1)').on('click', function () {
-            //     $('.picture-contents').html('不好意思，您没有访问权限！');
-            // });
-
+            function initMap() {
+                $('#map-container').css('display','block');
+                var map = new BMap.Map('map-container');
+                var point = new BMap.Point(112.008205, 27.71753);
+                map.centerAndZoom(point, 15);
+                map.addControl(new BMap.NavigationControl());
+                map.addControl(new BMap.ScaleControl());
+                map.addControl(new BMap.OverviewMapControl());
+                map.addControl(new BMap.MapTypeControl());
+                map.setCurrentCity("娄底"); // 仅当设置城市信息时，MapTypeControl的切换功能才能可用
+                var marker = new BMap.Marker(point); // 创建标注
+                map.addOverlay(marker);
+                map.enableScrollWheelZoom(true); //开启鼠标滚轮缩放
+            }
 
 
             $(window).on('scroll', function () {
@@ -114,7 +138,7 @@
                     }
                     end = start + length;
                     onOff = true;
-                }, 200);
+                }, 500);
             }
 
             function getShort() {

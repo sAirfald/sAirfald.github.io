@@ -327,24 +327,74 @@ body {
     transition: all 2s;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.picture-contents #map-container {
+    width: 100%;
+    height: 600px;
+}
 
 /*end picture*/
+
+/* friends */
+
+.friends-container {
+    background: url('../images/friends/bg.jpg');
+    min-height: 100%;
+}
+
+.friends-links .links-item img {
+    width: 100%;
+    border-radius: 50%;
+}
+
+.friends-links .links-item {
+    margin-right: 20px;
+}
+
+.friends-links .links-item a {
+    display: block;
+    margin-bottom: 20px;
+}
+
+.friends-container .friends-goBack {
+    width: 80px;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*friends*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 /*end*/

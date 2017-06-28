@@ -18,10 +18,11 @@
     var scale = oPlayList.offsetHeight / oListItem.offsetHeight;
     oDrag.style.height = scale * oScroll.offsetHeight + 'px';
 
-    oPlayList.addEventListener('mousewheel', stopScroll, false);
+    oPlayList.addEventListener('DOMMouseScroll', stopScroll, false);
+    oPlayList.onmousewheel = stopScroll;
 
     function stopScroll(ev) {
-        if (ev.wheelDelta < 0) {
+        if (ev.wheelDelta < 0 || ev.detail > 0) {
             oDrag.style.top = parseInt(getComputedStyle(oDrag)['top']) + 10 + 'px';
             oListItem.style.top = parseInt(getComputedStyle(oListItem)['top']) - (10 / (oScroll.offsetHeight - oDrag.offsetHeight)) * (oListItem.offsetHeight - oPlayList.offsetHeight) + 'px';
         } else {
